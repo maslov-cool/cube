@@ -1,7 +1,15 @@
 import pygame
 
+try:
+    w, hue = input(), input()
+    if int(w) != float(w) or int(hue) != float(hue) or int(w) % 4 or int(w) > 100 or not (0 <= int(hue) <= 360):
+        raise ValueError
+except ValueError:
+    print('Неправильный формат ввода')
+else:
+    w = int(w)
+    hue = int(hue)
 
-w, hue = int(input()), int(input())
 if __name__ == '__main__':
     # инициализация Pygame:
     pygame.init()
